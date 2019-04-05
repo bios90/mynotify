@@ -28,8 +28,13 @@ class UpdateTokenController extends Controller
         {
             $user->fb_token = $token;
             $user->save();
+            return "all Ok";
         }
+        else
+            {
+                return "user_null";
+            }
 
-        return "all Ok";
+
     }
 }
