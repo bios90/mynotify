@@ -21,9 +21,13 @@ class SendMailVerify extends Mailable
 
     public function build()
     {
+        $hostname = env("APP_URL", "http://mynotify.test");
+        $url = url($hostname.'/validate') . '?' . http_build_query(['id' => $this->user->id, 'key' => $this->user->activation_key]);
+
         return $this->from('register@salesideas.ru')
             ->subject('Test email send')
             ->view('emailverify')
-            ->with('user',$this->user);
+            ->with('user',$this->user)
+            ->with('url',$url);
     }
 }
