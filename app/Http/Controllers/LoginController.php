@@ -42,7 +42,13 @@ class LoginController extends Controller
             return 'verify_error';
         }
 
-        return json_encode($user);
+        if($request->has('fb_token'))
+        {
+            $token = $request->input('fb_token');
+            $user->fb_token = $token;
+            $user->save();
+        }
 
+        return json_encode($user);
     }
 }
