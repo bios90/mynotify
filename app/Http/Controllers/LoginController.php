@@ -37,7 +37,7 @@ class LoginController extends Controller
             return 'pass_error';
         }
 
-        if($user->virified === 0)
+        if($user->virified == 0)
         {
             return 'verify_error';
         }

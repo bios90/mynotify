@@ -19,4 +19,6 @@ Route::post('/register','RegisterController@register');
 
 Route::post('/login','LoginController');
 
+Route::post('/updatetoken','UpdateTokenController');
+
 Route::get('/validate','ValidationPageController@index');
