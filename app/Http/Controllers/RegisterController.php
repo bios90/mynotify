@@ -62,51 +62,8 @@ class RegisterController extends Controller
         $user->save();
 
         Mail::to($user->email)->send(new SendMailVerify($user));
-//        $this->sendEmail($user);
+
+        return "success";
 
     }
-
-    function sendEmail($user)
-    {
-        $mail = new PHPMailer();
-
-        try
-        {
-            $mail->CharSet = 'UTF-8';
-
-            $message = "Test message";
-            $message = mb_convert_encoding($message, 'UTF-8');
-            $mail->isSMTP();
-            $mail->Host = 'smtp.jino.ru';
-            $mail->Username = 'register@salesideas.ru';
-            $mail->Password = 'AA12411241aa';
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port = 465;
-            $mail->SMTPAuth = true;
-            $mail->setFrom('register@salesideas.ru', mb_convert_encoding('Мои контакты - Регистрация','UTF-8'));
-            $mail->addAddress("bios90@mail.ru","filippok");
-
-
-            $mail->isHTML(false);
-            $mail->Subject = mb_convert_encoding('Активация аккаунта приложения Мои Контакты','UTF-8');
-            $mail->Body = $message;
-
-            if($mail->Send())
-            {
-                return "okkkk";
-                exit;
-            }
-            else
-            {
-                return "errrro";
-                exit;
-            }
-        }
-        catch(Exception $e)
-        {
-            return $e->getMessage();
-            exit;
-        }
-    }
-
 }
