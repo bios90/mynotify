@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::post('/register','RegisterController@register');
 
+Route::post('/login','LoginController');
+
 Route::get('/validate','ValidationPageController@index');

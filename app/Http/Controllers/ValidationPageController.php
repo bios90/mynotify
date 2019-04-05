@@ -28,7 +28,7 @@ class ValidationPageController extends Controller
         }
 
 
-        if($user->verified == 1)
+        if($user->verified === 1)
         {
             $errors[] = "Данный email уже активирован";
             return view('verifypage.verifypage', compact('errors'));

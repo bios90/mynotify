@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        @if($result)
+        @if(isset($result))
             <div class="alert alert-success" role="alert">
 
 
