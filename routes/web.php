@@ -22,3 +22,7 @@ Route::post('/login','LoginController');
 Route::post('/updatetoken','UpdateTokenController');
 
 Route::get('/validate','ValidationPageController@index');
+
+Route::get('/admin','AdminController@index');
+
+Route::post('/admin','AdminController@send');

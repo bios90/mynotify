@@ -16,9 +16,11 @@
             <div class="alert alert-success" role="alert">
 
 
-                    <p class="m-3 p-0 text-center">Email успешно подтвержден</p>
+                <p class="m-3 p-0 text-center">Email успешно подтвержден</p>
 
 
             </div>
         @endif
     </div>
+
+@stop
